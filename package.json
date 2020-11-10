@@ -21,6 +21,7 @@
     "eslint": "^7.13.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "serialize-javascript": "^5.0.1",
     "terser-webpack-plugin": "^5.0.3",
@@ -31,8 +32,11 @@
   "dependencies": {
     "@pixi/app": "^5.3.3",
     "@pixi/core": "^5.3.3",
+    "@pixi/display": "^5.3.3",
+    "@pixi/graphics": "^5.3.3",
     "@pixi/loaders": "^5.3.3",
     "@pixi/sprite": "^5.3.3",
+    "@pixi/text": "^5.3.3",
     "@pixi/ticker": "^5.3.3"
   }
 }
