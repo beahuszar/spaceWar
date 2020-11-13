@@ -1,10 +1,11 @@
 import { Container } from '@pixi/display';
 
 export default class ScreenController extends Container {
-  constructor(stage) {
+  constructor({ stage, nextScreen = '' }) {
     super();
     this.stage = stage;
     this.isActive = true;
+    this.nextScreen = nextScreen;
   }
 
   // eslint-disable-next-line class-methods-use-this
