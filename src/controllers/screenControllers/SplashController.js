@@ -1,8 +1,11 @@
-import { Texture } from '@pixi/core';
+import { Texture, BaseTexture } from '@pixi/core';
+import { Text, TextStyle } from '@pixi/text';
 import { TilingSprite } from '@pixi/sprite-tiling';
+import { AnimatedSprite } from '@pixi/sprite-animated';
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from '../../helpers/globals';
 import ScreenController from './ScreenController';
-import background from '../../images/splash_background.png';
+import background from '../../assets/images/splash_background.png';
+// import fontFamily from '../../assets/font/ARCADECLASSIC.ttf'; TODO: find out how to include
 
 export default class SplashController extends ScreenController {
   constructor({ stage, nextScreen = 'menu' }) {
@@ -11,6 +14,34 @@ export default class SplashController extends ScreenController {
     this.background = new TilingSprite(texture, CANVAS_WIDTH, CANVAS_HEIGHT);
     this.background.position.set(0, 0);
     this.stage.addChild(this.background);
+
+    const title = new Text('Space War');
+    title.x = CANVAS_WIDTH / 2;
+    title.y = CANVAS_HEIGHT * 0.2;
+    title.anchor.set(0.5);
+    title.style = new TextStyle({
+      dropShadow: true,
+      fill: '#f20707',
+      fontFamily: 'Impact, Charcoal, sans-serif',
+      fontSize: 150,
+      fontVariant: 'small-caps',
+      letterSpacing: -1,
+    });
+    this.stage.addChild(title);
+
+    let bla = [];
+    for (let index = 0; index < 21; index++) {
+      bla.push(new Texture(new BaseTexture(`./assets/walking_monster/skeleton-walking_${index}.png`)));
+    }
+    const animatedSprite = new AnimatedSprite(bla);
+    animatedSprite.scale.set(0.3, 0.3);
+    animatedSprite.anchor.set(0.5);
+    animatedSprite.animationSpeed = 0.5;
+    animatedSprite.loop = true;
+    animatedSprite.x = CANVAS_WIDTH / 2;
+    animatedSprite.y = CANVAS_HEIGHT * 0.7;
+    this.stage.addChild(animatedSprite);
+    animatedSprite.play();
   }
 
   update() {
