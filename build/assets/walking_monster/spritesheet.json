@@ -1,0 +1,435 @@
+{
+	"frames": {
+		"skeleton-walking_0.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_1.png": {
+			"frame": {
+				"x": 1217,
+				"y": 1,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_10.png": {
+			"frame": {
+				"x": 2433,
+				"y": 1,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_11.png": {
+			"frame": {
+				"x": 1,
+				"y": 790,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_12.png": {
+			"frame": {
+				"x": 1217,
+				"y": 790,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_13.png": {
+			"frame": {
+				"x": 2433,
+				"y": 790,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_14.png": {
+			"frame": {
+				"x": 1,
+				"y": 1579,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_15.png": {
+			"frame": {
+				"x": 1217,
+				"y": 1579,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_16.png": {
+			"frame": {
+				"x": 2433,
+				"y": 1579,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_17.png": {
+			"frame": {
+				"x": 1,
+				"y": 2368,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_18.png": {
+			"frame": {
+				"x": 1217,
+				"y": 2368,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_19.png": {
+			"frame": {
+				"x": 2433,
+				"y": 2368,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_2.png": {
+			"frame": {
+				"x": 1,
+				"y": 3157,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_20.png": {
+			"frame": {
+				"x": 1217,
+				"y": 3157,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_3.png": {
+			"frame": {
+				"x": 2433,
+				"y": 3157,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_4.png": {
+			"frame": {
+				"x": 3649,
+				"y": 1,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_5.png": {
+			"frame": {
+				"x": 3649,
+				"y": 790,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_6.png": {
+			"frame": {
+				"x": 3649,
+				"y": 1579,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_7.png": {
+			"frame": {
+				"x": 3649,
+				"y": 2368,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_8.png": {
+			"frame": {
+				"x": 3649,
+				"y": 3157,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		},
+		"skeleton-walking_9.png": {
+			"frame": {
+				"x": 1,
+				"y": 3946,
+				"w": 1214,
+				"h": 787
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 1214,
+				"h": 787
+			},
+			"sourceSize": {
+				"w": 1214,
+				"h": 787
+			}
+		}
+	},
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 4864,
+			"h": 4734
+		},
+		"scale": "1"
+	}
+}
