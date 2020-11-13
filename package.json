@@ -36,6 +36,7 @@
     "@pixi/graphics": "^5.3.3",
     "@pixi/loaders": "^5.3.3",
     "@pixi/sprite": "^5.3.3",
+    "@pixi/sprite-tiling": "^5.3.3",
     "@pixi/text": "^5.3.3",
     "@pixi/ticker": "^5.3.3"
   }
