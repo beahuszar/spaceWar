@@ -5,7 +5,6 @@ import BackgroundModel from '../../models/BackgroundModel';
 import TextModel from '../../models/TextModel';
 import ScreenController from './ScreenController';
 import background from '../../assets/images/splash_background.png';
-// import fontFamily from '../../assets/font/ARCADECLASSIC.ttf'; TODO: find out how to include
 
 export default class SplashController extends ScreenController {
   constructor({ stage, nextScreen = 'menu' }) {
@@ -24,7 +23,7 @@ export default class SplashController extends ScreenController {
       style: {
         dropShadow: true,
         fill: '#f20707',
-        fontFamily: 'Impact, Charcoal, sans-serif',
+        fontFamily: 'Arcade',
         fontSize: 150,
         fontVariant: 'small-caps',
         letterSpacing: -1,
