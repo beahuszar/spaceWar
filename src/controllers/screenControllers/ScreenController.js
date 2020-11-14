@@ -5,6 +5,7 @@ export default class ScreenController extends Container {
     super();
     this.stage = stage;
     this.nextScreen = nextScreen;
+    this.isActive = true;
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -14,6 +15,7 @@ export default class ScreenController extends Container {
     this.stage.children.forEach((child) => {
       this.stage.removeChild(child);
     });
+    this.isActive = false;
     this.stage.state = this.nextScreen;
   }
 }

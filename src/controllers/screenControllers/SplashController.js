@@ -1,4 +1,6 @@
-import { CANVAS_WIDTH, CANVAS_HEIGHT, MENU_SCREEN } from '../../helpers/globals';
+import {
+  CANVAS_WIDTH, CANVAS_HEIGHT, MENU_SCREEN, TEXT_STYLE,
+} from '../../helpers/globals';
 import Monster from '../../models/Monster';
 import BackgroundModel from '../../models/BackgroundModel';
 import TextModel from '../../models/TextModel';
@@ -18,17 +20,10 @@ export default class SplashController extends ScreenController {
       text: 'Space War',
       positionX: CANVAS_WIDTH / 2,
       positionY: CANVAS_HEIGHT * 0.2,
-      style: {
-        dropShadow: true,
-        fill: '#f20707',
-        fontFamily: 'Arcade',
-        fontSize: 150,
-        fontVariant: 'small-caps',
-        letterSpacing: -1,
-      },
+      style: { ...TEXT_STYLE },
     });
     this.nextScreen = nextScreen;
-    this.stage.addChild(this.background, this.title, this.monster);
+    this.addChild(this.background, this.title, this.monster);
   }
 
   gameLoop() {
