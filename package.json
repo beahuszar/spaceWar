@@ -34,6 +34,7 @@
     "@pixi/core": "^5.3.3",
     "@pixi/display": "^5.3.3",
     "@pixi/graphics": "^5.3.3",
+    "@pixi/interaction": "^5.3.3",
     "@pixi/loaders": "^5.3.3",
     "@pixi/sprite": "^5.3.3",
     "@pixi/sprite-animated": "^5.3.3",
