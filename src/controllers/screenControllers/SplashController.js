@@ -1,4 +1,4 @@
-import { CANVAS_WIDTH, CANVAS_HEIGHT } from '../../helpers/globals';
+import { CANVAS_WIDTH, CANVAS_HEIGHT, MENU_SCREEN } from '../../helpers/globals';
 import Monster from '../../models/Monster';
 import BackgroundModel from '../../models/BackgroundModel';
 import TextModel from '../../models/TextModel';
@@ -6,7 +6,7 @@ import ScreenController from './ScreenController';
 import background from '../../assets/images/splash_background.png';
 
 export default class SplashController extends ScreenController {
-  constructor({ stage, nextScreen = 'menu' }) {
+  constructor({ stage, nextScreen = MENU_SCREEN }) {
     super({ stage, nextScreen });
     this.background = new BackgroundModel({
       texture: background,
@@ -27,7 +27,7 @@ export default class SplashController extends ScreenController {
         letterSpacing: -1,
       },
     });
-    this.nextScreen = 'menu';
+    this.nextScreen = nextScreen;
     this.stage.addChild(this.background, this.title, this.monster);
   }
 

@@ -1,6 +1,9 @@
 import { Application } from '@pixi/app';
-import { CANVAS_WIDTH, CANVAS_HEIGHT } from '../helpers/globals';
+import {
+  CANVAS_WIDTH, CANVAS_HEIGHT, SPLASH_SCREEN, MENU_SCREEN, GAME_SCREEN, EXIT,
+} from '../helpers/globals';
 import SplashController from './screenControllers/SplashController';
+import MenuController from './screenControllers/MenuController';
 
 class App extends Application {
   constructor() {
@@ -10,22 +13,23 @@ class App extends Application {
       backgroundColor: 0x283747,
     });
 
-    this.stage.state = 'splash';
+    this.stage.state = SPLASH_SCREEN;
     this.splashScreen = new SplashController({ stage: this.stage });
+    this.menuScreen = new MenuController({ stage: this.stage });
   }
 
   gameLoop() {
     switch (this.stage.state) {
-      case 'splash':
+      case SPLASH_SCREEN:
         this.splashScreen.gameLoop();
         break;
-      case 'menu':
+      case MENU_SCREEN:
         console.log('menu');
         break;
-      case 'game':
+      case GAME_SCREEN:
         console.log('game');
         break;
-      case 'exit':
+      case EXIT:
         console.log('exit');
         break;
       default:

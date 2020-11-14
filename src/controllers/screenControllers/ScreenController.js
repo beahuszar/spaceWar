@@ -10,10 +10,10 @@ export default class ScreenController extends Container {
   // eslint-disable-next-line class-methods-use-this
   gameLoop() { }
 
-  destroyScreen(nextScreen) {
+  destroyScreen() {
     this.stage.children.forEach((child) => {
       this.stage.removeChild(child);
     });
-    this.stage.state = nextScreen;
+    this.stage.state = this.nextScreen;
   }
 }
