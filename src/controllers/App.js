@@ -10,11 +10,27 @@ class App extends Application {
       backgroundColor: 0x283747,
     });
 
+    this.stage.state = 'splash';
     this.splashScreen = new SplashController({ stage: this.stage });
   }
 
   gameLoop() {
-    this.splashScreen.update();
+    switch (this.stage.state) {
+      case 'splash':
+        this.splashScreen.gameLoop();
+        break;
+      case 'menu':
+        console.log('menu');
+        break;
+      case 'game':
+        console.log('game');
+        break;
+      case 'exit':
+        console.log('exit');
+        break;
+      default:
+        this.splashScreen.gameLoop();
+    }
   }
 
   initGame() {
