@@ -15,6 +15,9 @@ export default class ScreenController extends Container {
     this.stage.children.forEach((child) => {
       this.stage.removeChild(child);
     });
+    this.children.forEach((child) => {
+      this.removeChild(child);
+    });
     this.isActive = false;
     this.stage.state = this.nextScreen;
   }

@@ -3,6 +3,7 @@ import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../helpers/globals';
 import { createTextures } from '../helpers/spaceship.srv';
 import KeyboardMovement from './KeyboardMovement';
 import BulletModel from './BulletModel';
+import ExplosionModel from './ExplosionModel';
 
 export default class SpaceshipModel extends AnimatedSpriteModel {
   constructor(stage) {
@@ -74,5 +75,9 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
       this.y += this.verticalSpeed;
       this.x += this.horizontalSpeed;
     }
+  }
+
+  explode() {
+    this.addChild(new ExplosionModel());
   }
 }

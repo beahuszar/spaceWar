@@ -8,7 +8,7 @@ import GameController from '../controllers/screenControllers/GameController';
 // eslint-disable-next-line consistent-return
 const updateScreen = (stage, ticker) => {
   // stage.state;
-  switch (GAME_SCREEN) {
+  switch (stage.state) {
     case SPLASH_SCREEN:
       return new SplashController({ stage });
     case MENU_SCREEN:

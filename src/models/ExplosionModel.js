@@ -7,10 +7,11 @@ export default class ExplosionModel extends AnimatedSpriteModel {
     super({ textures });
     this.animationSpeed = 0.2;
     this.loop = false;
+    this.scale.set(3, 3);
     this.onComplete = () => {
-      const spaceship = this.parent;
-      if (spaceship.parent) {
-        spaceship.parent.removeChild(spaceship);
+      const explodingObject = this.parent;
+      if (explodingObject.parent) {
+        explodingObject.parent.removeChild(explodingObject);
       }
       this.destroy();
     };
