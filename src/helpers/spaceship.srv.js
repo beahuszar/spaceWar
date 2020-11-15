@@ -2,6 +2,7 @@ import { BaseTexture, Texture } from '@pixi/core';
 import { Rectangle } from '@pixi/math';
 import spaceShip from '../assets/images/Spaceship-shooter-environment/spritesheets/ship.png';
 import bullet from '../assets/images/Spaceship-shooter-environment/spritesheets/laser-bolts.png';
+import enemy from '../assets/images/Spaceship-shooter-environment/spritesheets/enemy-medium.png';
 
 export const createTextures = () => {
   const spriteSheet = BaseTexture.from(spaceShip);
@@ -34,6 +35,17 @@ export const createBulletTexture = () => {
   const animation = [
     new Texture(spriteSheet, new Rectangle(w, 0, w, h)),
     new Texture(spriteSheet, new Rectangle(w, h, w, h)),
+  ];
+  return animation;
+};
+
+export const createEnemyTexture = () => {
+  const spriteSheet = BaseTexture.from(enemy);
+  const w = 16;
+  const h = 32;
+  const animation = [
+    new Texture(spriteSheet, new Rectangle(0, 0, w, h)),
+    new Texture(spriteSheet, new Rectangle(0, h, w, h)),
   ];
   return animation;
 };

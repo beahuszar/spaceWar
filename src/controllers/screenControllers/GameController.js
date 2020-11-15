@@ -5,6 +5,7 @@ import sky from '../../assets/images/Aurora Borealis/Sky.png';
 import mountains from '../../assets/images/Aurora Borealis/Mountains.png';
 import ground from '../../assets/images/Aurora Borealis/Forest.png';
 import SpaceshipModel from '../../models/SpaceshipModel';
+import EnemyModel from '../../models/EnemyModel';
 
 export default class GameController extends ScreenController {
   constructor({ stage, nextScreen }) {
@@ -26,7 +27,8 @@ export default class GameController extends ScreenController {
       height: CANVAS_HEIGHT,
     });
     this.spaceShip = new SpaceshipModel(stage);
-    this.addChild(this.sky, this.mountains, this.ground, this.spaceShip);
+    this.enemy = new EnemyModel();
+    this.addChild(this.sky, this.mountains, this.ground, this.spaceShip, this.enemy);
   }
 
   gameLoop() {

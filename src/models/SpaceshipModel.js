@@ -10,17 +10,14 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     super({ textures: textures.flyEast });
     this.stage = stage;
     this.animationSpeed = 0.2;
-    this.loop = true;
     this.x = 100;
     this.y = CANVAS_HEIGHT / 2;
-    this.interactive = true;
     this.speed = 2;
     this.verticalSpeed = 0;
     this.horizontalSpeed = 0;
     this.bullets = [];
     this.setControls(textures);
     this.setAttack();
-    this.play();
   }
 
   setAttack() {
