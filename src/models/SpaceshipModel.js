@@ -1,5 +1,5 @@
 import AnimatedSpriteModel from './AnimatedSpriteModel';
-import { CANVAS_HEIGHT } from '../helpers/globals';
+import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../helpers/globals';
 import { createTextures } from '../helpers/spaceship.srv';
 import KeyboardMovement from './KeyboardMovement';
 import BulletModel from './BulletModel';
@@ -69,7 +69,13 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
   }
 
   move() {
-    this.y += this.verticalSpeed;
-    this.x += this.horizontalSpeed;
+    const horizontalMovement = this.x + this.horizontalSpeed;
+    const verticalMovement = this.y + this.verticalSpeed;
+    const isWithinCanvasX = horizontalMovement < CANVAS_WIDTH && horizontalMovement > 0;
+    const isWithinCanvasY = verticalMovement < CANVAS_HEIGHT && verticalMovement > 0;
+    if (isWithinCanvasX && isWithinCanvasY) {
+      this.y += this.verticalSpeed;
+      this.x += this.horizontalSpeed;
+    }
   }
 }
