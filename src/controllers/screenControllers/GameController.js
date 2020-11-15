@@ -33,5 +33,7 @@ export default class GameController extends ScreenController {
     this.sky.tilePosition.x -= 0.1;
     this.mountains.tilePosition.x -= 0.9;
     this.ground.tilePosition.x -= 0.8;
+    this.spaceShip.y += this.spaceShip.verticalSpeed;
+    this.spaceShip.x += this.spaceShip.horizontalSpeed;
   }
 }
