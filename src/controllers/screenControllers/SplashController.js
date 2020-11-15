@@ -33,7 +33,7 @@ export default class SplashController extends ScreenController {
       this.monster.x -= 5;
     }
 
-    if (this.monster.x === CANVAS_WIDTH / 2) {
+    if (this.monster.x <= CANVAS_WIDTH / 2) {
       this.monster.stop();
       this.monster.alpha -= 0.01;
       this.title.alpha -= 0.01;
