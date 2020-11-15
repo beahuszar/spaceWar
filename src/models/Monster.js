@@ -7,7 +7,6 @@ export default class Monster extends AnimatedSpriteModel {
     const textures = setTexture();
     super({ textures });
     this.scale.set(0.3, 0.3);
-    this.anchor.set(0.5);
     this.animationSpeed = 0.7;
     this.loop = true;
     this.x = CANVAS_WIDTH;
