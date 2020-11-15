@@ -18,19 +18,12 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     this.verticalSpeed = 0;
     this.horizontalSpeed = 0;
     this.bullets = [];
+    this.setControls(textures);
+    this.setAttack();
     this.play();
-    this.south = new KeyboardMovement(['ArrowDown', 's']);
-    this.north = new KeyboardMovement(['ArrowUp', 'w']);
-    this.east = new KeyboardMovement(['ArrowRight', 'd']);
-    this.west = new KeyboardMovement(['ArrowLeft', 'a']);
-    this.south.press = this.moveVertically.bind(this, textures.flySouth, 2);
-    this.south.release = this.release.bind(this, textures.flyEast);
-    this.north.press = this.moveVertically.bind(this, textures.flyNorth, -2);
-    this.north.release = this.release.bind(this, textures.flyEast);
-    this.east.press = this.moveHorizontally.bind(this, textures.flyEast, 2);
-    this.east.release = this.release.bind(this, textures.flyEast);
-    this.west.press = this.moveHorizontally.bind(this, textures.flyWest, -2);
-    this.west.release = this.release.bind(this, textures.flyEast);
+  }
+
+  setAttack() {
     this.shoot = new KeyboardMovement(['Spacebar', ' ']);
     this.shoot.press = () => {
       const newBullet = new BulletModel();
@@ -41,22 +34,42 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     };
   }
 
-  moveVertically(texture, speed) {
+  setControls(textures) {
+    this.south = new KeyboardMovement(['ArrowDown', 's']);
+    this.north = new KeyboardMovement(['ArrowUp', 'w']);
+    this.east = new KeyboardMovement(['ArrowRight', 'd']);
+    this.west = new KeyboardMovement(['ArrowLeft', 'a']);
+    this.south.press = this.setVerticalPosition.bind(this, textures.flySouth, 2);
+    this.south.release = this.stopMotion.bind(this, textures.flyEast);
+    this.north.press = this.setVerticalPosition.bind(this, textures.flyNorth, -2);
+    this.north.release = this.stopMotion.bind(this, textures.flyEast);
+    this.east.press = this.setHorizontalPosition.bind(this, textures.flyEast, 2);
+    this.east.release = this.stopMotion.bind(this, textures.flyEast);
+    this.west.press = this.setHorizontalPosition.bind(this, textures.flyWest, -2);
+    this.west.release = this.stopMotion.bind(this, textures.flyEast);
+  }
+
+  setVerticalPosition(texture, speed) {
     this.textures = texture;
     this.verticalSpeed = speed;
     this.play();
   }
 
-  moveHorizontally(texture, speed) {
+  setHorizontalPosition(texture, speed) {
     this.textures = texture;
     this.horizontalSpeed = speed;
     this.play();
   }
 
-  release(texture) {
+  stopMotion(texture) {
     this.textures = texture;
     this.verticalSpeed = 0;
     this.horizontalSpeed = 0;
     this.play();
+  }
+
+  move() {
+    this.y += this.verticalSpeed;
+    this.x += this.horizontalSpeed;
   }
 }
