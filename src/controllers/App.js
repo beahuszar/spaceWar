@@ -1,4 +1,5 @@
 import { Application } from '@pixi/app';
+import sound from 'pixi-sound';
 import {
   CANVAS_WIDTH, CANVAS_HEIGHT, SPLASH_SCREEN,
 } from '../helpers/globals';
@@ -24,6 +25,8 @@ class App extends Application {
 
   initGame() {
     document.body.appendChild(this.view);
+    const vmi = sound.Sound.from('./assets/music/gameplay.mp3');
+    vmi.play();
     this.stage.state = SPLASH_SCREEN;
     this.currentScreen = updateScreen(this.stage);
     this.stage.addChild(this.currentScreen);

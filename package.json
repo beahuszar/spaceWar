@@ -41,6 +41,7 @@
     "@pixi/sprite-animated": "^5.3.3",
     "@pixi/sprite-tiling": "^5.3.3",
     "@pixi/text": "^5.3.3",
-    "@pixi/ticker": "^5.3.3"
+    "@pixi/ticker": "^5.3.3",
+    "pixi-sound": "^3.0.5"
   }
 }
