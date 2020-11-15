@@ -5,10 +5,13 @@ export default class ExplosionModel extends AnimatedSpriteModel {
   constructor() {
     const textures = createExplosionTexture();
     super({ textures });
-    this.animationSpeed = 0.1;
+    this.animationSpeed = 0.2;
     this.loop = false;
     this.onComplete = () => {
-      this.parent.destroy();
+      const spaceship = this.parent;
+      if (spaceship.parent) {
+        spaceship.parent.removeChild(spaceship);
+      }
       this.destroy();
     };
   }
