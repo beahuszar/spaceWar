@@ -1,12 +1,14 @@
 import AnimatedSpriteModel from './AnimatedSpriteModel';
 import { CANVAS_HEIGHT } from '../helpers/globals';
-import createTextures from '../helpers/spaceship.srv';
+import { createTextures } from '../helpers/spaceship.srv';
 import KeyboardMovement from './KeyboardMovement';
+import BulletModel from './BulletModel';
 
 export default class SpaceshipModel extends AnimatedSpriteModel {
-  constructor() {
+  constructor(stage) {
     const textures = createTextures();
     super({ textures: textures.flyEast });
+    this.stage = stage;
     this.animationSpeed = 0.2;
     this.loop = true;
     this.x = 100;
@@ -15,6 +17,7 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     this.speed = 2;
     this.verticalSpeed = 0;
     this.horizontalSpeed = 0;
+    this.bullets = [];
     this.play();
     this.south = new KeyboardMovement(['ArrowDown', 's']);
     this.north = new KeyboardMovement(['ArrowUp', 'w']);
@@ -28,6 +31,14 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     this.east.release = this.release.bind(this, textures.flyEast);
     this.west.press = this.moveHorizontally.bind(this, textures.flyWest, -2);
     this.west.release = this.release.bind(this, textures.flyEast);
+    this.shoot = new KeyboardMovement(['Spacebar', ' ']);
+    this.shoot.press = () => {
+      const newBullet = new BulletModel();
+      newBullet.x = this.x + 50;
+      newBullet.y = this.y;
+      this.bullets.push(newBullet);
+      this.stage.addChild(newBullet);
+    };
   }
 
   moveVertically(texture, speed) {

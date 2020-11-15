@@ -25,7 +25,7 @@ export default class GameController extends ScreenController {
       width: CANVAS_WIDTH,
       height: CANVAS_HEIGHT,
     });
-    this.spaceShip = new SpaceshipModel();
+    this.spaceShip = new SpaceshipModel(stage);
     this.addChild(this.sky, this.mountains, this.ground, this.spaceShip);
   }
 
@@ -35,5 +35,11 @@ export default class GameController extends ScreenController {
     this.ground.tilePosition.x -= 0.8;
     this.spaceShip.y += this.spaceShip.verticalSpeed;
     this.spaceShip.x += this.spaceShip.horizontalSpeed;
+    if (this.spaceShip.bullets) {
+      this.spaceShip.bullets.forEach((bullet) => {
+        // eslint-disable-next-line no-param-reassign
+        bullet.x += bullet.speed;
+      });
+    }
   }
 }
