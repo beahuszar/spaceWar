@@ -1,3 +1,4 @@
+import sound from 'pixi-sound';
 import AnimatedSpriteModel from './AnimatedSpriteModel';
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../helpers/globals';
 import { createTextures } from '../helpers/spaceship.srv';
@@ -19,6 +20,8 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     this.bullets = [];
     this.setControls(textures);
     this.setAttack();
+    this.sound = sound.Sound.from('./assets/music/shoot.wav');
+    this.explosion = sound.Sound.from('./assets/music/explosion.wav');
   }
 
   setAttack() {
@@ -29,6 +32,7 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
       newBullet.y = this.y;
       this.bullets.push(newBullet);
       this.stage.addChild(newBullet);
+      this.sound.play();
     };
   }
 
@@ -78,6 +82,7 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
   }
 
   explode() {
+    this.explosion.play();
     this.addChild(new ExplosionModel());
   }
 }

@@ -25,8 +25,9 @@ class App extends Application {
 
   initGame() {
     document.body.appendChild(this.view);
-    const vmi = sound.Sound.from('./assets/music/gameplay.mp3');
-    vmi.play();
+    const music = sound.Sound.from('./assets/music/gameplay.mp3');
+    music.play();
+    music.loop = true;
     this.stage.state = SPLASH_SCREEN;
     this.currentScreen = updateScreen(this.stage);
     this.stage.addChild(this.currentScreen);

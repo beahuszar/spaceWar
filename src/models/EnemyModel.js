@@ -1,3 +1,4 @@
+import sound from 'pixi-sound';
 import AnimatedSpriteModel from './AnimatedSpriteModel';
 import { createEnemyTexture } from '../helpers/spaceship.srv';
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../helpers/globals';
@@ -15,6 +16,7 @@ export default class EnemyModel extends AnimatedSpriteModel {
       min: -5,
     };
     this.scale.set(3, 3);
+    this.explosion = sound.Sound.from('./assets/music/explosion.wav');
   }
 
   move() {
@@ -25,6 +27,7 @@ export default class EnemyModel extends AnimatedSpriteModel {
   }
 
   explode() {
+    this.explosion.play();
     this.addChild(new ExplosionModel());
   }
 }
