@@ -1,4 +1,4 @@
-import { CANVAS_HEIGHT, CANVAS_WIDTH, TEXT_STYLE } from '../../helpers/globals';
+import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../../helpers/globals';
 import BackgroundModel from '../../models/BackgroundModel';
 import ScreenController from './ScreenController';
 import sky from '../../assets/images/Aurora Borealis/Sky.png';
@@ -33,13 +33,25 @@ export default class GameController extends ScreenController {
     this.sky.tilePosition.x -= 0.1;
     this.mountains.tilePosition.x -= 0.9;
     this.ground.tilePosition.x -= 0.8;
-    this.spaceShip.y += this.spaceShip.verticalSpeed;
-    this.spaceShip.x += this.spaceShip.horizontalSpeed;
-    if (this.spaceShip.bullets) {
-      this.spaceShip.bullets.forEach((bullet) => {
+    this.spaceShip.move();
+    if (this.spaceShip.bullets.length > 0) {
+      this.updateBullets();
+    }
+  }
+
+  updateBullets() {
+    this.spaceShip.bullets.forEach((bullet, index) => {
+      if (bullet.x > CANVAS_WIDTH) {
+        this.removeBullet(bullet, index);
+      } else {
         // eslint-disable-next-line no-param-reassign
         bullet.x += bullet.speed;
-      });
-    }
+      }
+    });
+  }
+
+  removeBullet(bullet, index) {
+    bullet.destroy();
+    this.spaceShip.bullets.splice(index, 1);
   }
 }
