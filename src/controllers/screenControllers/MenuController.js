@@ -38,6 +38,9 @@ export default class MenuController extends ScreenController {
   gameLoop() {
     this.background.tilePosition.x += 0.3;
     this.planets.tilePosition.x += 0.1;
+    if (this.nextScreen !== '') {
+      this.destroyScreen();
+    }
   }
 
   getButtons() {
