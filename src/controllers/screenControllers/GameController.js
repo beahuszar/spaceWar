@@ -43,7 +43,10 @@ export default class GameController extends ScreenController {
 
   updateBullets() {
     this.spaceShip.bullets.forEach((bullet, index) => {
-      if (bullet.x > CANVAS_WIDTH) {
+      if (this.hasHit(bullet)) {
+        this.enemy.explode();
+        this.removeBullet(bullet, index);
+      } else if (bullet.x > CANVAS_WIDTH) {
         this.removeBullet(bullet, index);
       } else {
         // eslint-disable-next-line no-param-reassign
@@ -55,5 +58,14 @@ export default class GameController extends ScreenController {
   removeBullet(bullet, index) {
     bullet.destroy();
     this.spaceShip.bullets.splice(index, 1);
+  }
+
+  hasHit(bullet) {
+    const bulletRect = bullet.getBounds();
+    const enemeyRect = this.enemy.getBounds();
+    return bulletRect.x + bulletRect.width > enemeyRect.x
+      && bulletRect.x < enemeyRect.x + enemeyRect.width
+      && bulletRect.y + bulletRect.height > enemeyRect.y
+      && bulletRect.y < enemeyRect.y + enemeyRect.height;
   }
 }

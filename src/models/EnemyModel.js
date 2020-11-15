@@ -1,6 +1,7 @@
 import AnimatedSpriteModel from './AnimatedSpriteModel';
 import { createEnemyTexture } from '../helpers/spaceship.srv';
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../helpers/globals';
+import ExplosionModel from './ExplosionModel';
 
 export default class EnemyModel extends AnimatedSpriteModel {
   constructor() {
@@ -10,5 +11,9 @@ export default class EnemyModel extends AnimatedSpriteModel {
     this.x = CANVAS_WIDTH * 0.8;
     this.y = CANVAS_HEIGHT / 2;
     this.scale.set(3, 3);
+  }
+
+  explode() {
+    this.addChild(new ExplosionModel());
   }
 }
