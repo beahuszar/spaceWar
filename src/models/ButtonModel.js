@@ -1,6 +1,8 @@
 import { Texture } from '@pixi/core';
 import { Sprite } from '@pixi/sprite';
-import { CANVAS_HEIGHT, CANVAS_WIDTH, TEXT_STYLE } from '../helpers/globals';
+import {
+  CANVAS_HEIGHT, CANVAS_WIDTH, EXIT, GAME_SCREEN, TEXT_STYLE,
+} from '../helpers/globals';
 import TextModel from './TextModel';
 
 export default class ButtonModel extends Sprite {
@@ -39,12 +41,12 @@ export default class ButtonModel extends Sprite {
     switch (this.title) {
       case 'EXIT':
         this.on('click', () => {
-          window.location.href = 'https://github.com/beahuszar';
+          this.parent.nextScreen = EXIT;
         });
         break;
       default:
         this.on('click', () => {
-          console.log('Start the game!');
+          this.parent.nextScreen = GAME_SCREEN;
         });
     }
   }

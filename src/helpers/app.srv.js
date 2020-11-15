@@ -3,18 +3,21 @@ import {
 } from './globals';
 import SplashController from '../controllers/screenControllers/SplashController';
 import MenuController from '../controllers/screenControllers/MenuController';
+import GameController from '../controllers/screenControllers/GameController';
 
-const updateScreen = (stage) => {
+// eslint-disable-next-line consistent-return
+const updateScreen = (stage, ticker) => {
   switch (stage.state) {
     case SPLASH_SCREEN:
       return new SplashController({ stage });
     case MENU_SCREEN:
       return new MenuController({ stage });
     case GAME_SCREEN:
-      console.log('game');
-      return '';
+      return new GameController({ stage });
     case EXIT:
-      console.log('exit');
+      stage.destroy();
+      ticker.destroy();
+      window.location.href = 'https://github.com/beahuszar';
       return '';
     default:
       return new SplashController({ stage });

@@ -15,7 +15,8 @@ class App extends Application {
 
   gameLoop() {
     if (!this.currentScreen.isActive) {
-      this.currentScreen = updateScreen(this.stage);
+      this.currentScreen = updateScreen(this.stage, this.ticker);
+      if (!this.ticker.started) return;
       this.stage.addChild(this.currentScreen);
     }
     this.currentScreen.gameLoop();
