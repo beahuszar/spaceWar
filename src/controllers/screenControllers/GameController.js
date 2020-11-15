@@ -87,8 +87,12 @@ export default class GameController extends ScreenController {
   }
 
   moveEnemies() {
-    this.enemies.forEach((enemy) => {
-      enemy.move();
-    });
+    for (let i = this.enemies.length - 1; i >= 0; i -= 1) {
+      if (this.enemies[i].x < 0) {
+        this.removeChild(this.enemies[i]);
+      } else {
+        this.enemies[i].move();
+      }
+    }
   }
 }

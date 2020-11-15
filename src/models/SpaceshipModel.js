@@ -12,7 +12,7 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     this.animationSpeed = 0.2;
     this.x = 100;
     this.y = CANVAS_HEIGHT / 2;
-    this.speed = 2;
+    this.speed = 5;
     this.verticalSpeed = 0;
     this.horizontalSpeed = 0;
     this.bullets = [];
@@ -36,13 +36,13 @@ export default class SpaceshipModel extends AnimatedSpriteModel {
     this.north = new KeyboardMovement(['ArrowUp', 'w']);
     this.east = new KeyboardMovement(['ArrowRight', 'd']);
     this.west = new KeyboardMovement(['ArrowLeft', 'a']);
-    this.south.press = this.setVerticalPosition.bind(this, textures.flySouth, 2);
+    this.south.press = this.setVerticalPosition.bind(this, textures.flySouth, this.speed);
     this.south.release = this.stopMotion.bind(this, textures.flyEast);
-    this.north.press = this.setVerticalPosition.bind(this, textures.flyNorth, -2);
+    this.north.press = this.setVerticalPosition.bind(this, textures.flyNorth, -this.speed);
     this.north.release = this.stopMotion.bind(this, textures.flyEast);
-    this.east.press = this.setHorizontalPosition.bind(this, textures.flyEast, 2);
+    this.east.press = this.setHorizontalPosition.bind(this, textures.flyEast, this.speed);
     this.east.release = this.stopMotion.bind(this, textures.flyEast);
-    this.west.press = this.setHorizontalPosition.bind(this, textures.flyWest, -2);
+    this.west.press = this.setHorizontalPosition.bind(this, textures.flyWest, -this.speed);
     this.west.release = this.stopMotion.bind(this, textures.flyEast);
   }
 
