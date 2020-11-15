@@ -3,6 +3,7 @@ import { Rectangle } from '@pixi/math';
 import spaceShip from '../assets/images/Spaceship-shooter-environment/spritesheets/ship.png';
 import bullet from '../assets/images/Spaceship-shooter-environment/spritesheets/laser-bolts.png';
 import enemy from '../assets/images/Spaceship-shooter-environment/spritesheets/enemy-medium.png';
+import explosion from '../assets/images/Spaceship-shooter-environment/spritesheets/explosion.png';
 
 export const createTextures = () => {
   const spriteSheet = BaseTexture.from(spaceShip);
@@ -46,6 +47,20 @@ export const createEnemyTexture = () => {
   const animation = [
     new Texture(spriteSheet, new Rectangle(0, 0, w, h)),
     new Texture(spriteSheet, new Rectangle(0, h, w, h)),
+  ];
+  return animation;
+};
+
+export const createExplosionTexture = () => {
+  const spriteSheet = BaseTexture.from(explosion);
+  const w = 80 / 5;
+  const h = 16;
+  const animation = [
+    new Texture(spriteSheet, new Rectangle(0, 0, w, h)),
+    new Texture(spriteSheet, new Rectangle(w, 0, w, h)),
+    new Texture(spriteSheet, new Rectangle(w * 2, 0, w, h)),
+    new Texture(spriteSheet, new Rectangle(w * 3, 0, w, h)),
+    new Texture(spriteSheet, new Rectangle(w * 4, 0, w, h)),
   ];
   return animation;
 };
