@@ -15,3 +15,5 @@ Spaceship can be navigated with arrow keys and `w, a, s, d`, and it can shoot wi
 npm i
 npm start
 ```
+
+...or play it [online](https://spacewar-hb.netlify.app/) :)
