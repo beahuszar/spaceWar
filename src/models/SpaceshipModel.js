@@ -1,14 +1,14 @@
 import sound from 'pixi-sound';
 import AnimatedSpriteModel from './AnimatedSpriteModel';
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../helpers/globals';
-import { createTextures } from '../helpers/spaceship.srv';
+import { createSpaceshipTextures } from '../helpers/texture.srv';
 import KeyboardMovement from './KeyboardMovement';
 import BulletModel from './BulletModel';
 import ExplosionModel from './ExplosionModel';
 
 export default class SpaceshipModel extends AnimatedSpriteModel {
   constructor(stage) {
-    const textures = createTextures();
+    const textures = createSpaceshipTextures();
     super({ textures: textures.flyEast });
     this.stage = stage;
     this.animationSpeed = 0.2;

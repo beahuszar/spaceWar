@@ -1,4 +1,4 @@
-import { createBulletTexture } from '../helpers/spaceship.srv';
+import { createBulletTexture } from '../helpers/texture.srv';
 import AnimatedSpriteModel from './AnimatedSpriteModel';
 
 export default class BulletModel extends AnimatedSpriteModel {

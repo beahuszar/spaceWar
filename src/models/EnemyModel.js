@@ -1,6 +1,6 @@
 import sound from 'pixi-sound';
 import AnimatedSpriteModel from './AnimatedSpriteModel';
-import { createEnemyTexture } from '../helpers/spaceship.srv';
+import { createEnemyTexture } from '../helpers/texture.srv';
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from '../helpers/globals';
 import ExplosionModel from './ExplosionModel';
 

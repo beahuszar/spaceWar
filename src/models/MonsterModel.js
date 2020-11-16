@@ -1,10 +1,10 @@
 import AnimatedSpriteModel from './AnimatedSpriteModel';
-import setTexture from '../helpers/monster.srv';
+import { setMonsterTexture } from '../helpers/texture.srv';
 import { CANVAS_WIDTH, CANVAS_HEIGHT } from '../helpers/globals';
 
-export default class Monster extends AnimatedSpriteModel {
+export default class MonsterModel extends AnimatedSpriteModel {
   constructor() {
-    const textures = setTexture();
+    const textures = setMonsterTexture();
     super({ textures });
     this.scale.set(0.3, 0.3);
     this.animationSpeed = 0.7;

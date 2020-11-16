@@ -5,7 +5,7 @@ import bullet from '../assets/images/Spaceship-shooter-environment/spritesheets/
 import enemy from '../assets/images/Spaceship-shooter-environment/spritesheets/enemy-medium.png';
 import explosion from '../assets/images/Spaceship-shooter-environment/spritesheets/explosion.png';
 
-export const createTextures = () => {
+export const createSpaceshipTextures = () => {
   const spriteSheet = BaseTexture.from(spaceShip);
   const w = 150 / 2;
   const h = 251 / 5;
@@ -63,4 +63,12 @@ export const createExplosionTexture = () => {
     new Texture(spriteSheet, new Rectangle(w * 4, 0, w, h)),
   ];
   return animation;
+};
+
+export const setMonsterTexture = () => {
+  const imgUrlArray = [];
+  for (let index = 0; index < 21; index += 1) {
+    imgUrlArray.push(new Texture(new BaseTexture(`./assets/walking_monster/skeleton-walking_${index}.png`)));
+  }
+  return imgUrlArray;
 };

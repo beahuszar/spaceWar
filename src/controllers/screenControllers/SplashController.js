@@ -1,7 +1,7 @@
 import {
   CANVAS_WIDTH, CANVAS_HEIGHT, MENU_SCREEN, TEXT_STYLE,
 } from '../../helpers/globals';
-import Monster from '../../models/Monster';
+import MonsterModel from '../../models/MonsterModel';
 import BackgroundModel from '../../models/BackgroundModel';
 import TextModel from '../../models/TextModel';
 import ScreenController from './ScreenController';
@@ -15,7 +15,7 @@ export default class SplashController extends ScreenController {
       width: CANVAS_WIDTH,
       height: CANVAS_HEIGHT,
     });
-    this.monster = new Monster();
+    this.monster = new MonsterModel();
     this.title = new TextModel({
       text: 'Space War',
       positionX: CANVAS_WIDTH / 2,

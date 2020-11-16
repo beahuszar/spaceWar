@@ -1,4 +1,4 @@
-import { createExplosionTexture } from '../helpers/spaceship.srv';
+import { createExplosionTexture } from '../helpers/texture.srv';
 import AnimatedSpriteModel from './AnimatedSpriteModel';
 
 export default class ExplosionModel extends AnimatedSpriteModel {
