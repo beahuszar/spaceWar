@@ -65,6 +65,7 @@ export default class GameController extends ScreenController {
   }
 
   updateBullets() {
+    // Check if bullet hit any enemies
     for (let i = this.spaceShip.bullets.length - 1; i >= 0; i -= 1) {
       const bullet = this.spaceShip.bullets[i];
       for (let j = this.enemies.length - 1; j >= 0; j -= 1) {
@@ -76,14 +77,17 @@ export default class GameController extends ScreenController {
         }
       }
     }
-    this.spaceShip.bullets.forEach((bullet, i) => {
+
+    // Check if bullet is out of canvas, or should be moved
+    for (let i = this.spaceShip.bullets.length - 1; i >= 0; i -= 1) {
+      const bullet = this.spaceShip.bullets[i];
       if (bullet.x > CANVAS_WIDTH) {
         this.removeBullet(bullet, i);
       } else {
         // eslint-disable-next-line no-param-reassign
         bullet.x += bullet.speed;
       }
-    });
+    }
   }
 
   removeEnemy(enemy, index) {
@@ -97,13 +101,13 @@ export default class GameController extends ScreenController {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  hasHit(bullet, enemy) {
-    const bulletRect = bullet.getBounds();
-    const enemeyRect = enemy.getBounds();
-    return bulletRect.x + bulletRect.width > enemeyRect.x
-      && bulletRect.x < enemeyRect.x + enemeyRect.width
-      && bulletRect.y + bulletRect.height > enemeyRect.y
-      && bulletRect.y < enemeyRect.y + enemeyRect.height;
+  hasHit(x, y) {
+    const rectA = x.getBounds();
+    const rectB = y.getBounds();
+    return rectA.x + rectA.width > rectB.x
+      && rectA.x < rectB.x + rectB.width
+      && rectA.y + rectA.height > rectB.y
+      && rectA.y < rectB.y + rectB.height;
   }
 
   moveEnemies() {
