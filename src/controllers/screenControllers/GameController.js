@@ -65,39 +65,27 @@ export default class GameController extends ScreenController {
   }
 
   updateBullets() {
-    // Check if bullet hit any enemies
-    for (let i = this.spaceShip.bullets.length - 1; i >= 0; i -= 1) {
-      const bullet = this.spaceShip.bullets[i];
-      for (let j = this.enemies.length - 1; j >= 0; j -= 1) {
-        const enemy = this.enemies[j];
-        if (this.hasHit(bullet, enemy)) {
-          this.removeEnemy(enemy, i);
-          this.removeBullet(bullet, i);
-          break;
-        }
-      }
-    }
-
     // Check if bullet is out of canvas, or should be moved
     for (let i = this.spaceShip.bullets.length - 1; i >= 0; i -= 1) {
       const bullet = this.spaceShip.bullets[i];
       if (bullet.x > CANVAS_WIDTH) {
-        this.removeBullet(bullet, i);
+        this.stage.removeChild(bullet);
+        this.spaceShip.bullets.splice(i, 1);
       } else {
-        // eslint-disable-next-line no-param-reassign
         bullet.x += bullet.speed;
       }
+
+      // check if enemy is hit
+      for (let j = this.enemies.length - 1; j >= 0; j -= 1) {
+        const enemy = this.enemies[j];
+        if (this.hasHit(enemy, bullet)) {
+          enemy.explode();
+          this.enemies.splice(j, 1);
+          this.stage.removeChild(bullet);
+          this.spaceShip.bullets.splice(i, 1);
+        }
+      }
     }
-  }
-
-  removeEnemy(enemy, index) {
-    enemy.explode();
-    this.enemies.splice(index, 1);
-  }
-
-  removeBullet(bullet, index) {
-    bullet.destroy();
-    this.spaceShip.bullets.splice(index, 1);
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -114,6 +102,7 @@ export default class GameController extends ScreenController {
     for (let i = this.enemies.length - 1; i >= 0; i -= 1) {
       if (this.enemies[i].x < 0) {
         this.removeChild(this.enemies[i]);
+        this.enemies.splice(i, 1);
       } else {
         this.enemies[i].move();
       }

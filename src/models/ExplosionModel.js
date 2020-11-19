@@ -9,11 +9,7 @@ export default class ExplosionModel extends AnimatedSpriteModel {
     this.loop = false;
     this.scale.set(3, 3);
     this.onComplete = () => {
-      const explodingObject = this.parent;
-      if (explodingObject.parent) {
-        explodingObject.parent.removeChild(explodingObject);
-      }
-      this.destroy();
+      this.parent.parent.removeChild(this.parent);
     };
   }
 }
