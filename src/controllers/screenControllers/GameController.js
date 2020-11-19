@@ -30,6 +30,7 @@ export default class GameController extends ScreenController {
       height: CANVAS_HEIGHT,
     });
     this.enemies = [];
+    this.isOver = false;
     this.spaceShip = new SpaceshipModel(stage);
     this.addChild(this.sky, this.mountains, this.ground, this.spaceShip);
     this.interval = setInterval(() => {
@@ -40,16 +41,18 @@ export default class GameController extends ScreenController {
   }
 
   gameLoop() {
-    this.isCollided();
-    this.sky.tilePosition.x -= 0.1;
-    this.mountains.tilePosition.x -= 0.9;
-    this.ground.tilePosition.x -= 0.8;
-    this.spaceShip.move();
-    if (this.enemies.length > 0) {
-      this.moveEnemies();
-    }
-    if (this.spaceShip.bullets.length > 0) {
-      this.updateBullets();
+    if (!this.isOver) {
+      this.isCollided();
+      this.sky.tilePosition.x -= 0.1;
+      this.mountains.tilePosition.x -= 0.9;
+      this.ground.tilePosition.x -= 0.8;
+      this.spaceShip.move();
+      if (this.enemies.length > 0) {
+        this.moveEnemies();
+      }
+      if (this.spaceShip.bullets.length > 0) {
+        this.updateBullets();
+      }
     }
     if (this.nextScreen !== '') {
       this.destroyScreen();
@@ -59,6 +62,7 @@ export default class GameController extends ScreenController {
   isCollided() {
     const isCollided = this.enemies.some((enemy) => this.hasHit(enemy, this.spaceShip));
     if (isCollided) {
+      this.isOver = true;
       this.spaceShip.explode();
       this.gameOver();
     }
