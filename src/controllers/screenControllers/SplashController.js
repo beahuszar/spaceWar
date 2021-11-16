@@ -17,7 +17,7 @@ export default class SplashController extends ScreenController {
     });
     this.monster = new MonsterModel();
     this.title = new TextModel({
-      text: 'Space War',
+      text: 'Data War',
       positionX: CANVAS_WIDTH / 2,
       positionY: CANVAS_HEIGHT * 0.2,
       style: { ...TEXT_STYLE },

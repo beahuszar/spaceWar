@@ -1,30 +1,26 @@
 import { BaseTexture, Texture } from '@pixi/core';
 import { Rectangle } from '@pixi/math';
-import spaceShip from '../assets/images/Spaceship-shooter-environment/spritesheets/ship.png';
+import spaceShip from '../assets/images/noémi/noémi_resized.png';
 import bullet from '../assets/images/Spaceship-shooter-environment/spritesheets/laser-bolts.png';
 import enemy from '../assets/images/Spaceship-shooter-environment/spritesheets/enemy-medium.png';
 import explosion from '../assets/images/Spaceship-shooter-environment/spritesheets/explosion.png';
 
 export const createSpaceshipTextures = () => {
   const spriteSheet = BaseTexture.from(spaceShip);
-  const w = 150 / 2;
-  const h = 251 / 5;
+  const w = 158 / 2;
+  const h = 158 / 2;
   const movements = {};
   movements.flyEast = [
-    new Texture(spriteSheet, new Rectangle(0, h, w, h)),
-    new Texture(spriteSheet, new Rectangle(w, h, w, h)),
+    new Texture(spriteSheet, new Rectangle(w, 0, w, h)),
   ];
   movements.flyNorth = [
     new Texture(spriteSheet, new Rectangle(0, 0, w, h)),
-    new Texture(spriteSheet, new Rectangle(w, 0, w, h)),
   ];
   movements.flySouth = [
-    new Texture(spriteSheet, new Rectangle(0, h * 4, w, h)),
-    new Texture(spriteSheet, new Rectangle(w, h * 4, w, h)),
+    new Texture(spriteSheet, new Rectangle(0, h, w, h)),
   ];
   movements.flyWest = [
-    new Texture(spriteSheet, new Rectangle(0, h * 2, w, h)),
-    new Texture(spriteSheet, new Rectangle(w, h * 2, w, h)),
+    new Texture(spriteSheet, new Rectangle(w, h, w, h)),
   ];
   return movements;
 };
@@ -41,12 +37,8 @@ export const createBulletTexture = () => {
 };
 
 export const createEnemyTexture = () => {
-  const spriteSheet = BaseTexture.from(enemy);
-  const w = 16;
-  const h = 32;
   const animation = [
-    new Texture(spriteSheet, new Rectangle(0, 0, w, h)),
-    new Texture(spriteSheet, new Rectangle(0, h, w, h)),
+    new Texture(new BaseTexture(`./assets/gdprenemies/gdprenemy${Math.ceil(Math.random() * 5)}.png`)),
   ];
   return animation;
 };
@@ -67,8 +59,8 @@ export const createExplosionTexture = () => {
 
 export const setMonsterTexture = () => {
   const imgUrlArray = [];
-  for (let index = 0; index < 21; index += 1) {
-    imgUrlArray.push(new Texture(new BaseTexture(`./assets/walking_monster/skeleton-walking_${index}.png`)));
+  for (let index = 1; index < 32; index += 1) {
+    imgUrlArray.push(new Texture(new BaseTexture(`./assets/mydata/${index}.png`)));
   }
   return imgUrlArray;
 };
